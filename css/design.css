@@ -1,0 +1,21 @@
+
+.user_input {
+    font-family: 'HSYuji-Regular';
+    outline: none;
+    font-size: 19px;
+    color: black;
+    border: 1px solid black;
+}
+
+.submit {
+    font-size: 15px;
+    
+}
+
+.user_input_field {
+    font-family: 'HSYuji-Regular';
+}
+
+#result {
+    font-size: 22px;
+}

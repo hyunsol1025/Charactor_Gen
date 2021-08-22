@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>캐설대</title>
+        
+        <link rel="stylesheet" href="./css/design.css">
+        <link rel="stylesheet" href="./css/fonts.css">
+        
+        <script src="./src/js/func.js"></script>
+        <script src="./src/js/main.js"></script>
+        
+    </head>
+    
+    <body>
+        <h2>캐설대</h2>
+        <div class="user_input_field">
+            <div>이름</div>
+            <input class="user_input" id="name"><br><br>
+            <div>성별</div>
+
+            <select class="user_input" id="gen">
+                <option>여자</option>
+                <option>남자</option>
+                <option>중성</option>
+                <option>무성</option>
+                <option>인간이 아님.</option>
+            </select><br><br>
+
+            <input class="submit" type="button" value="캐릭터 만들기!" onclick="doGen()">
+            
+        </div>
+        
+        <div id="result"></div>
+    </body>
+    
+</html>
