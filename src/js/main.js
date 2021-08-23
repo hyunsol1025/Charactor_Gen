@@ -15,60 +15,61 @@ function gen(name, gen) {
     
     var hair_color_type = [ "단색(일반)", "시크릿 투톤 (안팎이 다름)", "투톤 (위 아래가 다름)", "헤어 브릿지 (머리카락 마디가 다름)","옴브레 (그라데이션 효과로 위 아래가 다름)" ];
     
-    var age = getRandom(5, 30);
+    var age = getRandom(5, 25);
     
-    var chr = [ 
-        "싸이코 패스",
-        "소시오 패스",
+    var personal = [
         "온화한",
         "다정한",
         "귀여운",
         "섹시한",
         "여왕님 또는 왕님 (도S)",
-        "부끄러운",
         "얀데레",
         "소심한",
         "메가데레",
         "쿨데레",
         "조용한",
-        "정의로운",
         "반장",
-        "중2 병이 있는",
-        "똑똑한",
         "댕청한",
-        "강아지",
         "까칠한",
-        "게으른",
-        "불쌍한",
         "밝은",
         "무심한",
         "츤데레",
-        "마조히스트",
-        "낙천적인 (태평한)",
-        "약점잡힌",
-        "냉정한",
-        "먹보",
-        "겁이 많은",
-        "장난이 많은",
-        "우울증",
-        "빌런",
-        "융통성 없는",
-        "희생적인",
-        "겸손한",
-        "거짓말 못하는",
-        "결백증이 있는",
-        "망상을 많이 하는",
-        "로리콘인",
-        "쇼타콘인",
-        "자신감(자기애) 넘치는",
-        "고지식한",
-        "성급한",
-        "거짓말을 많이 하는",
-        "허영심이 있는"
+        "냉정한"
     ];
     
+    var chr = [
+        "낙천적인 (태평한)",
+        "약점잡힌",
+        "우울증",
+        "희생적인",
+        "겸손한",
+        "망상을 많이 하는",
+        "자신감(자기애) 넘치는",
+        "허영심이 있는",
+        "게으른",
+        "똑똑한",
+        "겁이 많은",
+        "장난이 많은",
+        "고지식한",
+        "로리콘",
+        "쇼타콘",
+        "거짓말 쟁이",
+        "결백증",
+        "융통성 없는",
+        "빌런",
+        "매사에 성급함",
+        "마조히스트",
+        "먹보",
+        "부끄럼 쟁이",
+        "중2 병",
+        "정의로움",
+        "학대 받음",
+        "인기 많은",
+        "강아지"
+    ];
     console.log(getRandom(0, girl_hair.length-1));
     
+    // 머리 -----------------
     var hair = "오류야 싯팔!";
     
     if(gen == "남자") {
@@ -86,5 +87,106 @@ function gen(name, gen) {
         }
     }
     
-    document.getElementById("result").innerHTML = age+"세이고 "+gen+"인 '"+name+"'(은)는 "+hair+"의 헤어스타일을 가지고 있으며 앞머리는 "+front_hair[getRandom(0, front_hair.length-1)]+"입니다.<br>그리고 머리 색상 타입은 "+hair_color_type[getRandom(0, hair_color_type.length-1)]+"이고 "+chr[getRandom(0, chr.length-1)]+" 성격입니다.";
+    // 결과 출력 -----------------
+    
+    document.getElementById("result").innerHTML = age+"세이고 "+
+        gen+"인 '"+
+        
+        name+"'(은)는 "+
+        
+        hair+"의 헤어스타일을 가지고 있으며 앞머리는 "+
+        
+        front_hair[getRandom(0, front_hair.length-1)]+
+        
+        "입니다.<br>그리고 머리 색상 타입은 "+hair_color_type[getRandom(0, hair_color_type.length-1)]+
+        
+        "이고 "+personal[getRandom(0, personal.length-1)]+" 성격입니다.";
+}
+
+function getChrStr(method, chr, imFirst) {
+    if(method == "and") {
+        
+        // 문장의 연결어 조합 반환
+        if(chr[chr.length-2] == "적" && chr[chr.length-1] == "인") {
+            var _originContent = chr.split("적인")[0];
+            
+            if(imFirst) {
+                return _originContent+"적이고";   
+            } else {
+                return _originContent+"적이며";   
+            }
+        }
+        
+        if(chr[chr.length-1] == "한") {
+            var _originContent = chr.slice(0, chr.length-1);
+            
+            if(imFirst) {
+                return _originContent+"하고";
+            } else {
+                return _originContent+"하며";
+            }
+        }
+        
+        if(chr[chr.length-2] == "하" && chr[chr.length-1] == "는") {
+            
+            var _originContent = chr.slice(0, chr.length-2);
+                                           
+            if(imFirst) {
+                return _originContent+"하고";
+            } else {
+                return _originContent+"하며";
+            }
+        }
+        
+        if(chr[chr.length-2] == "치" && chr[chr.length-1] == "는") {
+            
+            var _originContent = chr.slice(0, chr.length-2);
+                                           
+            if(imFirst) {
+                return _originContent+"치고";
+            } else {
+                return _originContent+"치며";
+            }
+        }
+        
+        if(chr[chr.length-2] == "있" && chr[chr.length-1] == "는") {
+            
+            var _originContent = chr.slice(0, chr.length-2);
+            
+            if(imFirst) {
+                return _originContent+"있고";   
+            } else {
+                return _originContent+"있으며";
+            }
+        }
+        
+        if(chr[chr.length-2] == "많" && chr[chr.length-1] == "은") {
+            
+            var _originContent = chr.slice(0, chr.length-2);
+            
+            if(imFirst) {
+                return _originContent+"많은";   
+            } else {
+                return _originContent+"많으며";
+            }
+        }
+        
+        switch(chr) {
+            case "약점잡힌":
+                return "약점이 잡혀 있으며";
+                
+            case "우울증":
+                return "우울증 속에 살고 있으며";
+                
+                case "우울증":
+                return "우울증 속에 살고 있으며";
+        }   
+    } 
+    else {
+        
+        // 문자의 끝맺음 반환
+        switch(chr) {
+        
+        }
+    }
 }

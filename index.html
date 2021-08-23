@@ -9,29 +9,53 @@
         
         <script src="./src/js/func.js"></script>
         <script src="./src/js/main.js"></script>
+        <script src="./src/js/event.js"></script>
         
     </head>
     
     <body>
-        <h2>캐설대</h2>
-        <div class="user_input_field">
-            <div>이름</div>
-            <input class="user_input" id="name"><br><br>
-            <div>성별</div>
-
-            <select class="user_input" id="gen">
-                <option>여자</option>
-                <option>남자</option>
-                <option>중성</option>
-                <option>무성</option>
-                <option>인간이 아님.</option>
-            </select><br><br>
-
-            <input class="submit" type="button" value="캐릭터 만들기!" onclick="doGen()">
+       <!-- 대가리 -->
+        <div>
+            
+            <img src="./src/img/CharGenLogo.png" height="100" style="padding: 15px;">
             
         </div>
         
-        <div id="result"></div>
+        <div class="menu">
+            <table>
+               <tr>
+                   <td>만들기</td>
+                   <td>무엇이 바뀌었나요?</td>
+                   <td>제작</td>
+               </tr>
+            </table>
+        </div>
+        
+        <div class="content_panel">
+          <br>
+           <div style="font-size: 21px;">캐릭터에 대하여..</div>
+            <div class="user_input_field">
+           
+                <div>이름</div>
+                <input class="user_input" id="name"><br><br>
+
+                <div>성별</div>
+
+                <select class="user_input" id="gen">
+                    <option>여자</option>
+                    <option>남자</option>
+                    <option>중성</option>
+                    <option>무성</option>
+                    <option>인간이 아님.</option>
+                </select><br><br>
+
+                <input class="submit" type="button" value="캐릭터 만들기!" onclick="doGen()">
+            
+            </div>
+        
+            <div id="result"></div>
+            
+        </div>
     </body>
     
 </html>
