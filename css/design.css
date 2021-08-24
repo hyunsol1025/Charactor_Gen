@@ -22,6 +22,10 @@ body {
     width: 200px;
 }
 
+.submit hover {
+    cursor: pointer;
+}
+
 .user_input_field {
     position: relative;
     top: 10px;
@@ -29,14 +33,18 @@ body {
     background: #ffdddd;
     width: 300px;
     padding: 15px;
+    height: 210px;
     box-shadow: 0px 0px 5px pink;
 }
 
 #result {
-    padding-top: 25px;
+    width: 1000px;
+    margin-top: 40px;
     font-size: 22px;
     opacity: 0%;
     transition: Opacity linear 0.4s;
+    background: #ffffff;
+    border-radius: 20px;    
 }
 
 /* 메뉴 */
@@ -85,4 +93,12 @@ body {
     font-size: 13px;
     margin-top: 15px;
     margin-left: 10px;
+}
+#result-text {
+    margin-top: -20px;
+    padding: 10px;
+}
+
+#submit div {
+    margin-top: -40px;
 }

@@ -10,6 +10,12 @@ window.onload = function() {
     window.ondragstart = function () {
         return false;
     }
+    
+    window.onclick = function(e) {
+        if(e.target.parentElement.id == "submit") {
+            doGen();
+        }
+    }
 }
 
 function changeSection(to) {
