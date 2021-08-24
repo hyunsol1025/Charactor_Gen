@@ -89,7 +89,14 @@ function gen(name, gen) {
     
     // 결과 출력 -----------------
     
-    document.getElementById("result").innerHTML = age+"세이고 "+
+    var result = document.getElementById("result");
+    
+    if(name == "이준영" && gen == "남자") {
+        document.getElementById("result").innerHTML = "졸라 잘생겼습니다.";
+        return;
+    }
+    
+    result.innerHTML = age+"세이고 "+
         gen+"인 '"+
         
         name+"'(은)는 "+
