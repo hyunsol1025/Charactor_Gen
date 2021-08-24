@@ -4,7 +4,10 @@ var updateLog = [
 ];
 
 function loadUpdateLog() {
+    
     var updateLogArea = document.getElementById("updateLogArea");
+    
+    updateLogArea.innerHTML = "";
     updateLog.forEach( function(str) {
         updateLogArea.innerHTML += str+"\n";
     });s
