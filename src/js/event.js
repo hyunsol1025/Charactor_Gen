@@ -21,21 +21,26 @@ window.onload = function() {
 function changeSection(to) {
     var make = document.getElementById("make");
     var updateLog = document.getElementById("updateLog");
+    var dev = document.getElementById("dev");
     
     if(to == "CharMake") {
-        make.style.display = "block";
+        dev.style.display = "none";
         updateLog.style.display = "none";
+        make.style.display = "block";
     }
     
     else if(to == "UpdateLog") {
         make.style.display = "none";
+        dev.style.display = "none";
         updateLog.style.display = "block";
         
         loadUpdateLog();
     }
     
     else if(to == "Dev") {
-        
+        make.style.display = "none";
+        updateLog.style.display = "none";
+        dev.style.display = "block";
     }
     
 }
