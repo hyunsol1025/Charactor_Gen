@@ -2,6 +2,11 @@ function doGen() {
     var _name = document.getElementById("name").value;
     var _gen = document.getElementById("gen").value;
     
+    if(_name == "") {
+        setMessage("캐릭터 이름이 없어요.");
+        return;
+    }
+    
     console.log(_name);
     gen(_name, _gen);
 }
@@ -41,7 +46,7 @@ function gen(name, gen) {
     
     var age = getRandom(5, 25);
     
-    result.innerHTML = age+"세이고 "+
+    setMessage(age+"세이고 "+
         gen+"인 '"+
         
         name+"'(은)는 "+
@@ -52,7 +57,16 @@ function gen(name, gen) {
         
         "입니다.<br>그리고 머리 색상 타입은 "+hair_color_type[getRandom(0, hair_color_type.length-1)]+
         
-        "이며 "+personal[getRandom(0, personal.length-1)]+" 성격을 지니고 있습니다.<br>또한 이 캐릭터는 "+getChrStr("and",chr[getRandom(0, chr.length-1)], true)+" "+getChrStr("and",chr[getRandom(0, chr.length-1)], false)+" "+chr[getRandom(0, chr.length-1)]+" 성향을 보입니다.";
+        "이며 "+personal[getRandom(0, personal.length-1)]+" 성격을 지니고 있습니다.<br>또한 이 캐릭터는 "+getChrStr("and",chr[getRandom(0, chr.length-1)], true)+" "+getChrStr("and",chr[getRandom(0, chr.length-1)], false)+" "+chr[getRandom(0, chr.length-1)]+" 성향을 보입니다.");
+}
+
+function setMessage(str) {
+    var result_parent = document.getElementById("result");
+    var result = document.getElementById("result-text");
+    
+    result_parent.style.opacity = "0%";
+    
+    result.innerHTML = str;
     
     document.getElementById("result").style.opacity = "100%";
 }
